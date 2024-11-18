@@ -1,10 +1,12 @@
 package wellknown
 
-import "fmt"
+import (
+	"net/http"
+)
 
 // https://github.com/jhass/nodeinfo/tree/main
 // https://fedidb.org/crawler.html
 
-func NodeInfo() {
-	fmt.Printf("Node\n")
+func NodeInfo(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Node Information\n"))
 }
